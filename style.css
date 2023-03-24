@@ -29,39 +29,83 @@ body {
     position: fixed;
     height: 90vh;
     width: 400px;
-    background: rgba(200, 195, 231, 0.1);
+    background: rgba(122, 120, 131, 0.15);
     box-shadow: 5px;
-    border: 2px groove rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    display: inline-block;
+    right: -400px;
+    top: 25px;
+    transition: .5s;
+
+    
+}
+
+
+.sidebar-active {
+    position: fixed;
+    height: 90vh;
+    width: 400px;
+    background: rgba(122, 120, 131, 0.2);
+    box-shadow: 5px;
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
     display: inline-block;
     right: 30px;
+    top: 25px;
+    transition: .5s;
     
 }
 
 .div-button {
     position: fixed;
+    display: inline-block;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    top: 25px;
+    border: none;
+    background: none;
+    transition: .5s;
+}
+
+
+.div-button-active {
+    position: fixed;
+    display: inline-block;
     right: 440px;
     width: 50px;
     height: 50px;
     top: 25px;
+    border: none;
+    background: none;
+    transition: .5s;
+    
 }
 
-.sidebar__search_button {
-    border-radius: 10px;
-    border: 2px groove rgb(77, 77, 142);
+.sidebar__nav_button {
     width: 50px;
     height: 50px;
+    border: none;
     position: relative;
     background-color: inherit;
     
 }
-.sidebar__search_button:active {
+.sidebar__nav_button:active {
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: relative;
+    background-color: inherit;
     opacity: 0.4;
+    top: -3px;
+    transition: .4s;
+    
+
     
 }
 
-.sidebar_search-icon {
-    top: -3px;
+.sidebar_nav-icon {
     width: 50px;
     height: 50px;
     position: relative;
@@ -94,7 +138,7 @@ body {
     height: 1.7rem;
     font-size: 1.3rem;
     background: none;
-    border: 2px solid rgba(0, 0, 0, 0.401);
+    border: 2px solid rgba(12, 12, 12, 0.575);
     font-family: 'Montserrat', sans-serif; 
     font-weight: 500;
     border-radius: 7px;
@@ -102,13 +146,91 @@ body {
 }
 
 .search-city__input:focus { 
-    border: 2px solid rgba(0, 0, 0, 0.701);
+    border: 3px solid rgb(9, 8, 8);
 
 }
 
 
-/* 
-.search-city_input::placeholder {
-    background-color: aqua;
+.main_info {
+    position: fixed;
+    display: flex;
+    background: rgba(122, 120, 131, 0.15);
+    box-shadow: 5px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    top: 400px;
+    left: 200px;
+    width: 700px;
+    height: 150px;
+}
+.temp {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 27.3%;
+    font-size: 6.5rem;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 500;
+    
+}
+
+.city_name {
+    width: 39.3%;
+    font-size: 3rem;
+    font-weight: 500;
+    
+}
+
+.city_name_value {
+    margin-top: 40px;
+}
+
+.time-date {
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+
+
+.img_weather {
+    width: 33.3%;
+    text-align: center;
+    
+    
+}
+.img_weather img {
+    width: 100px;
+    height: 100px;
+
+}
+
+
+.search_button {
+    width: 35px;
+    height: 35px;
+    position: absolute;
     background: none;
-} */
+    right: 30px;
+    top: 36px;
+    border: none;
+ 
+}
+
+.search_button:active {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: none;
+    right: 30px;
+    top: 34px;
+    border-radius: 8px;
+    background-color: aqua;
+ 
+}
+
+.search_button img {
+    width: 35px;
+    height: 35px;
+
+}
