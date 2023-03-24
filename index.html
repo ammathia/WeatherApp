@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -30,16 +29,36 @@
             <img src="img/search.png" alt="icon">
         </button>
         </div>
+        <p class="weather_details">Weather details</p>
+        <div class="parameter">
+            <p class="parameter_name">Weather</p>
+            <p class="parameter_value parameter_weather">--</p>
+        </div>
+        <div class="parameter">
+            <p class="parameter_name">Humidity</p>
+            <p class="parameter_value parameter_humidity">--</p>
+        </div>
+        <div class="parameter">
+            <p class="parameter_name">Pressure</p>
+            <p class="parameter_value parameter_pressure">--</p>
+        </div>
+        <div class="parameter">
+            <p class="parameter_name">Wind</p>
+            <p class="parameter_value parameter_wind">--</p>
+        </div>
+
+        
     </div>
     <div class="main_info">
-        <div class="temp"><p>26&deg;</p></div>
+        <div class="temp"><p id="temp">--&deg;</p></div>
         <div class="city_name">
-            <p class="city_name_value">Berlin</p>
-            <p class="time-date">Date</p>
+            <p class="city_name_value">--</p>
+            <p class="time-date">--</p>
 
         </div>
         <div class="img_weather">
-            <img src="img/fav.png" alt="fav">
+            <img id="weather_icon" src="img/fav.png" alt="fav">
+            <p id="weather_state">Weather State</p>
         </div>
 
 
@@ -47,6 +66,6 @@
     
 
 </div>
-    <script src="app.js"></script>
+    <script async src="app.js"></script>
 </body>
 </html>

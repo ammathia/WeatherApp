@@ -161,7 +161,7 @@ body {
     top: 400px;
     left: 200px;
     width: 700px;
-    height: 150px;
+    height: 180px;
 }
 .temp {
     display: flex;
@@ -183,7 +183,7 @@ body {
 }
 
 .city_name_value {
-    margin-top: 40px;
+    padding-top: 50px;
 }
 
 .time-date {
@@ -202,6 +202,7 @@ body {
 .img_weather img {
     width: 100px;
     height: 100px;
+    margin-top: 20px;
 
 }
 
@@ -225,7 +226,7 @@ body {
     right: 30px;
     top: 34px;
     border-radius: 8px;
-    background-color: aqua;
+    background-color: rgba(24, 82, 133, 0.318);
  
 }
 
@@ -233,4 +234,51 @@ body {
     width: 35px;
     height: 35px;
 
+}
+
+#weather_state {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.weather_details {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.parameter {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 30px;
+    width: 100%;
+    height: 10px;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.parameter_name {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    display: inline;
+    
+}
+
+.parameter_value {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+    display: inline;
+    margin-right: 15px;
+    
+    height: 10px;
+    width: 100px;
 }
