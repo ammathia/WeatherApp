@@ -119,7 +119,7 @@ searchBtn.onclick = () => {
         .then(function (data) {
             console.log(data)
             if(data.name.length > 8) {
-                document.querySelector(".city_name_value").style.paddingTop = "20px";
+                document.querySelector(".city_name_value").style.paddingTop = "10px";
             } else {
                 document.querySelector(".city_name_value").style.paddingTop = "50px";
             }
