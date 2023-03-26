@@ -15,45 +15,8 @@ function addZero(i) {
     return i;
   }
 
-// let h = function() {
-//     const date1 = new Date();
-//     if (date1.getHours() < 10) {
-//         return "0" + date1.getHours();
-//     } else {
-//         return date1.getHours();
-//     }
-// };
-
-// let m = function() {
-//     const date1 = new Date();
-//     if (date1.getMinutes() < 10) {
-//         return "0" + date1.getMinutes();
-//     } else {
-//         return date1.getMinutes();
-//     }
-// };
-
-
-// let h = addZero(date.getHours()) ;
-// let m = addZero(date.getMinutes()) ;
-
-
-
-
-// document.querySelector('.time-date').innerHTML = h + ":" + m +
-//     " - " + date.toLocaleDateString("en-US", options);
-
-// setInterval(() => {
-//     const date = new Date();
-//     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-//     document.querySelector('.time-date').innerHTML = h + ":" + m +
-//     " - " + date.toLocaleDateString("en-US", options);
-
-// }, 2000);
-
-
-
-navBar.addEventListener("click", ()=> {
+  
+navBar.addEventListener("click", () => {
     if (sideNav.className == "sidebar") {
         sideNav.className = "sidebar-active";
         navBar.className = "div-button-active"
@@ -76,13 +39,12 @@ let m;
 let s;
 
 let dateNow  = new Date();
-
 let UTCtime =  dateNow.getTime() + dateNow.getTimezoneOffset() * 60 * 1000;
-
-
 let ShiftTime;
 let dateShift;
+let Timezone;
 let a;
+
 window.onload = () => {
     
     searchValue = "Berlin";
@@ -112,9 +74,11 @@ window.onload = () => {
             document.querySelector('.parameter_pressure').innerText = data.main.pressure + " hPa";
 
             document.querySelector('.parameter_wind').innerText = data.wind.speed + " m/s";
-     
 
-            ShiftTime = UTCtime + data.timezone * 1000;
+
+
+            Timezone = data.timezone;
+            ShiftTime = UTCtime + Timezone * 1000;
             dateShift = new Date(ShiftTime);
             h = addZero(dateShift.getHours());
             m = addZero(dateShift.getMinutes());
@@ -132,7 +96,12 @@ window.onload = () => {
 
 
 setInterval(() => {
-    UTCtime += s*1000 + 1000;
+    dateNow  = new Date();
+    UTCtime =  dateNow.getTime() + dateNow.getTimezoneOffset() * 60 * 1000;
+    ShiftTime = UTCtime + Timezone * 1000;
+    dateShift = new Date(ShiftTime);
+    h = addZero(dateShift.getHours());
+    m = addZero(dateShift.getMinutes());
     a = h + ":" + m + 
     " - " + dateShift.toLocaleDateString("en-US", options);
     document.querySelector('.time-date').innerHTML = a;
@@ -184,18 +153,6 @@ searchBtn.onclick = () => {
             document.querySelector('.parameter_pressure').innerText = data.main.pressure + " hPa";
 
             document.querySelector('.parameter_wind').innerText = data.wind.speed + " m/s";
-
-
-            
-            // const dateNow = new Date();
-            // const UTCtime = dateNow.getTime() + dateNow.getTimezoneOffset() * 60 * 1000;
-            // const ShiftTime = UTCtime + data.timezone * 1000;
-            // const dateShift = new Date(ShiftTime);
-            // let h = addZero(dateShift.getHours());
-            // let m = addZero(dateShift.getMinutes());
-            // document.querySelector('.time-date').innerHTML = h + ":" + m + 
-            // " - " + dateShift.toLocaleDateString("en-US", options);
-
 
             ShiftTime = UTCtime + data.timezone * 1000;
             dateShift = new Date(ShiftTime);
