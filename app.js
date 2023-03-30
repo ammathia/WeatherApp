@@ -86,26 +86,25 @@ window.onload = () => {
             a = h + ":" + m + 
             " - " + dateShift.toLocaleDateString("en-US", options);
             document.querySelector('.time-date').innerHTML = a;
-
-
             
-
-
-    })
-}
-
-
-setInterval(() => {
-    dateNow  = new Date();
-    UTCtime =  dateNow.getTime() + dateNow.getTimezoneOffset() * 60 * 1000;
-    ShiftTime = UTCtime + Timezone * 1000;
-    dateShift = new Date(ShiftTime);
-    h = addZero(dateShift.getHours());
-    m = addZero(dateShift.getMinutes());
-    a = h + ":" + m + 
-    " - " + dateShift.toLocaleDateString("en-US", options);
-    document.querySelector('.time-date').innerHTML = a;
-    console.log(a);
+            
+            
+            
+            
+        })
+    }
+    
+    
+    setInterval(() => {
+        dateNow  = new Date();
+        UTCtime =  dateNow.getTime() + dateNow.getTimezoneOffset() * 60 * 1000;
+        ShiftTime = UTCtime + Timezone * 1000;
+        dateShift = new Date(ShiftTime);
+        h = addZero(dateShift.getHours());
+        m = addZero(dateShift.getMinutes());
+        a = h + ":" + m + 
+        " - " + dateShift.toLocaleDateString("en-US", options);
+        document.querySelector('.time-date').innerHTML = a;
 
 
 }, 1000)
@@ -154,13 +153,17 @@ searchBtn.onclick = () => {
 
             document.querySelector('.parameter_wind').innerText = data.wind.speed + " m/s";
 
-            ShiftTime = UTCtime + data.timezone * 1000;
+           
+            Timezone = data.timezone;
+            ShiftTime = UTCtime + Timezone * 1000;
             dateShift = new Date(ShiftTime);
             h = addZero(dateShift.getHours());
             m = addZero(dateShift.getMinutes());
+            s = dateShift.getSeconds();
             a = h + ":" + m + 
             " - " + dateShift.toLocaleDateString("en-US", options);
             document.querySelector('.time-date').innerHTML = a;
+            
 
 
     })
