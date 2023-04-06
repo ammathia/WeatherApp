@@ -48,7 +48,7 @@ let a;
 window.onload = () => {
     
     searchValue = "Berlin";
-    console.log(new Date()  - dateNow);
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${API}`)
         .then(function (resp) { return resp.json() })
         .then(function (data) {
@@ -88,11 +88,6 @@ window.onload = () => {
             document.querySelector('.time-date').innerHTML = a;
 
 
-            console.log(new Date()  - dateNow);
-            
-            
-            
-            
             
         })
     }
