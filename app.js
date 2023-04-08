@@ -5,7 +5,6 @@ const navBar = document.querySelector('.div-button');
 
 const sideNav = document.querySelector('.sidebar');
 
-const date = new Date();
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -165,7 +164,7 @@ searchBtn.onclick = () => {
 
 
     })
-    .catch((er) => {
+    .catch(() => {
         alert('Something went wrong, try again')
     })
 
