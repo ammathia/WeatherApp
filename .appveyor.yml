@@ -8,3 +8,6 @@ branches:
 
 build: off
 
+    
+install: 
+  - npm install 
