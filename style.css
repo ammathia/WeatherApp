@@ -28,14 +28,14 @@ body {
 .sidebar {
     position: fixed;
     height: 90vh;
-    width: 400px;
+    width: 26vw;
     background: rgba(122, 120, 131, 0.15);
-    box-shadow: 5px;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 10px;
+    box-shadow: 0.33rem;
+    border: 0.2rem solid rgb(0, 0, 0);
+    border-radius: 0.66rem;
     display: inline-block;
-    right: -400px;
-    top: 25px;
+    right: -26vw;
+    top: 1.6vw;
     transition: .5s;
 
     
@@ -45,14 +45,14 @@ body {
 .sidebar-active {
     position: fixed;
     height: 90vh;
-    width: 400px;
+    width:  26vw;
     background: rgba(122, 120, 131, 0.2);
     box-shadow: 5px;
     border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
     display: inline-block;
     right: 30px;
-    top: 25px;
+    top: 1.6vw;
     transition: .5s;
     
 }
@@ -60,10 +60,10 @@ body {
 .div-button {
     position: fixed;
     display: inline-block;
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    top: 25px;
+    right: 1vw;
+    width: 3.2vw;
+    height: 3.2vw;
+    top: 1.6vw;
     border: none;
     background: none;
     transition: .5s;
@@ -73,10 +73,10 @@ body {
 .div-button-active {
     position: fixed;
     display: inline-block;
-    right: 440px;
-    width: 50px;
-    height: 50px;
-    top: 25px;
+    right: 29vw;
+    width: 3.2vw;
+    height: 3.2vw;
+    top: 1.6vw;
     border: none;
     background: none;
     transition: .5s;
@@ -84,16 +84,16 @@ body {
 }
 
 .sidebar__nav_button {
-    width: 50px;
-    height: 50px;
+    width: 3.2vw;
+    height: 3.2vw;
     border: none;
     position: relative;
     background-color: inherit;
     
 }
 .sidebar__nav_button:active {
-    width: 50px;
-    height: 50px;
+    width: 3.2vw;
+    height: 3.2vw;
     border: none;
     position: relative;
     background-color: inherit;
@@ -106,8 +106,8 @@ body {
 }
 
 .sidebar_nav-icon {
-    width: 50px;
-    height: 50px;
+    width: 3.2vw;
+    height: 3.2vw;
     position: relative;
 
 }
@@ -127,7 +127,7 @@ body {
 
 .search-city__title {
     color: rgb(0, 0, 0);
-    margin: 5px;
+    margin: 0.33rem;
     font-size: 1.5rem;
     font-weight: 700;
 
@@ -138,7 +138,7 @@ body {
     height: 1.7rem;
     font-size: 1.3rem;
     background: none;
-    border: 2px solid rgba(12, 12, 12, 0.575);
+    border: 0.13rem solid rgba(12, 12, 12, 0.575);
     font-family: 'Montserrat', sans-serif; 
     font-weight: 500;
     border-radius: 7px;
@@ -146,7 +146,7 @@ body {
 }
 
 .search-city__input:focus { 
-    border: 3px solid rgb(9, 8, 8);
+    border: 0.2rem solid rgb(9, 8, 8);
 
 }
 
@@ -155,13 +155,13 @@ body {
     position: fixed;
     display: flex;
     background: rgba(122, 120, 131, 0.15);
-    box-shadow: 5px;
-    border: 3px solid rgb(0, 0, 0);
+    box-shadow: 0.33rem;
+    border: 0.2rem solid rgb(0, 0, 0);
     border-radius: 10px;
-    top: 400px;
+    bottom: 19vh;
     left: 200px;
-    width: 800px;
-    height: 180px;
+    width: 50vw;
+    height: 27vh;
 }
 .temp {
     display: flex;
@@ -179,11 +179,12 @@ body {
     width: 39.3%;
     font-size: 3rem;
     font-weight: 500;
+    text-align: center;
     
 }
 
 .city_name_value {
-    padding-top: 50px;
+    padding-top: 3.2vw;
 }
 
 .time-date {
@@ -200,39 +201,39 @@ body {
     
 }
 .img_weather img {
-    width: 100px;
-    height: 100px;
-    margin-top: 20px;
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-top: 1.33rem;
 
 }
 
 
 .search_button {
-    width: 35px;
-    height: 35px;
+    width: 2.3vw;
+    height: 2.3vw;
     position: absolute;
     background: none;
-    right: 30px;
-    top: 36px;
+    right: 1.9vw;
+    top: 2.3vw;
     border: none;
  
 }
 
 .search_button:active {
-    width: 35px;
-    height: 35px;
+    width: 2.3vw;
+    height: 2.3vw;
     position: absolute;
     background: none;
-    right: 30px;
-    top: 34px;
-    border-radius: 8px;
+    right: 1.9vw;
+    top: 2.3vw;
+    border-radius: 0.7rem;
     background-color: rgba(24, 82, 133, 0.318);
  
 }
 
 .search_button img {
-    width: 35px;
-    height: 35px;
+    width: 2.28vw;
+    height: 2.28vw;
 
 }
 

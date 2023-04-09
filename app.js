@@ -109,6 +109,12 @@ window.onload = () => {
 
 
 
+document.querySelector(".search-city__input").addEventListener("keypress", event => {
+    if (event.key === "Enter") {
+        searchBtn.click();
+    }
+})
+
 searchBtn.onclick = () => {
 
     searchValue = document.querySelector(".search-city__input").value;
@@ -160,6 +166,7 @@ searchBtn.onclick = () => {
             a = h + ":" + m + 
             " - " + dateShift.toLocaleDateString("en-US", options);
             document.querySelector('.time-date').innerHTML = a;
+            console.log(data);
             
 
 
