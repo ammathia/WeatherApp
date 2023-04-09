@@ -189,11 +189,16 @@ body {
     
 }
 
+.city_name_value {
+    text-align: left;
+}
+
 
 
 .time-date {
     font-size: 1.1rem;
     font-weight: bold;
+    text-align: left;
 
 }
 
