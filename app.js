@@ -131,7 +131,7 @@ searchBtn.onclick = () => {
 
             } else {
 
-                document.querySelector(".city_name_value").style.paddingTop = "50px";
+                // document.querySelector(".city_name_value").style.paddingTop = "50px";
             }
 
             document.querySelector('.city_name_value').innerText = data.name;  
