@@ -89,6 +89,9 @@ window.onload = () => {
 
             
         })
+        .catch( () => {
+            alert("Something went wrong, try to refresh the page")
+        })
     }
     
     
@@ -171,7 +174,7 @@ searchBtn.onclick = () => {
 
 
     })
-    .catch(() => {
+    .catch( () => {
         alert('Something went wrong, try again')
     })
 
