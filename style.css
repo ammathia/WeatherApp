@@ -233,7 +233,7 @@ body {
     height: 2.3vw;
     position: absolute;
     background: none;
-    right: 1.9vw;
+    /* right: 1.9vw; */
     top: 2.3vw;
     border: none;
  
@@ -244,7 +244,7 @@ body {
     height: 2.3vw;
     position: absolute;
     background: none;
-    right: 1.9vw;
+    /* right: 1.9vw; */
     top: 2.3vw;
     border-radius: 0.7rem;
     background-color: rgba(24, 82, 133, 0.318);
