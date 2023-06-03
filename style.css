@@ -139,6 +139,7 @@ body {
 .search-city__input {
     color:  rgb(0, 0, 0);
     height: 1.7rem;
+    width: 18rem;
     font-size: 1.3rem;
     background: none;
     border: 0.13rem solid rgba(12, 12, 12, 0.575);
