@@ -45,56 +45,68 @@ let a;
 
 window.onload = () => {
   searchValue = "Berlin";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${API}`;
+  async function fetchData(url) {
+    try {
+      const response = await fetch(url);
+      try {
+        if (response.ok) {
+          const data = await response.json();
 
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${API}`
-  )
-    .then(function (resp) {
-      return resp.json();
-    })
-    .then(function (data) {
-      document.querySelector(".city_name_value").innerText = data.name;
+          document.querySelector(".city_name_value").innerText = data.name;
 
-      document.getElementById("temp").innerHTML =
-        Math.round(data.main.temp - 273) + "&deg;";
+          document.getElementById("temp").innerHTML =
+            Math.round(data.main.temp - 273) + "&deg;";
 
-      let iconId = data.weather[0].icon;
+          let iconId = data.weather[0].icon;
 
-      document.getElementById(
-        "weather_icon"
-      ).src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
+          document.getElementById(
+            "weather_icon"
+          ).src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
 
-      let weatherRaw = data.weather[0].description;
+          let weatherRaw = data.weather[0].description;
 
-      let weatherState =
-        weatherRaw.charAt(0).toUpperCase() + weatherRaw.slice(1);
+          let weatherState =
+            weatherRaw.charAt(0).toUpperCase() + weatherRaw.slice(1);
 
-      document.getElementById("weather_state").innerText = weatherState;
+          document.getElementById("weather_state").innerText = weatherState;
 
-      document.querySelector(".parameter_weather").innerText =
-        data.weather[0].main;
+          document.querySelector(".parameter_weather").innerText =
+            data.weather[0].main;
 
-      document.querySelector(".parameter_humidity").innerText =
-        data.main.humidity + "%";
+          document.querySelector(".parameter_humidity").innerText =
+            data.main.humidity + "%";
 
-      document.querySelector(".parameter_pressure").innerText =
-        data.main.pressure + " hPa";
+          document.querySelector(".parameter_pressure").innerText =
+            data.main.pressure + " hPa";
 
-      document.querySelector(".parameter_wind").innerText =
-        data.wind.speed + " m/s";
+          document.querySelector(".parameter_wind").innerText =
+            data.wind.speed + " m/s";
 
-      Timezone = data.timezone;
-      ShiftTime = UTCtime + Timezone * 1000;
-      dateShift = new Date(ShiftTime);
-      h = addZero(dateShift.getHours());
-      m = addZero(dateShift.getMinutes());
-      s = dateShift.getSeconds();
-      a = h + ":" + m + " - " + dateShift.toLocaleDateString("en-US", options);
-      document.querySelector(".time-date").innerHTML = a;
-    })
-    .catch(() => {
-      alert("Something went wrong, try to refresh the page");
-    });
+          Timezone = data.timezone;
+          ShiftTime = UTCtime + Timezone * 1000;
+          dateShift = new Date(ShiftTime);
+          h = addZero(dateShift.getHours());
+          m = addZero(dateShift.getMinutes());
+          s = dateShift.getSeconds();
+          a =
+            h +
+            ":" +
+            m +
+            " - " +
+            dateShift.toLocaleDateString("en-US", options);
+          document.querySelector(".time-date").innerHTML = a;
+        } else {
+          alert("Something went wrong");
+        }
+      } catch (e) {
+        alert(e.message);
+      }
+    } catch (e) {
+      alert("Network problems");
+    }
+  }
+  fetchData(url);
 };
 
 setInterval(() => {
@@ -118,66 +130,72 @@ document
 
 searchBtn.onclick = () => {
   searchValue = document.querySelector(".search-city__input").value;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${API}`;
 
   if (isFinite(searchValue)) {
     alert("Write down a city or a state name");
     return;
   }
 
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${API}`
-  )
-    .then(function (resp) {
-      return resp.json();
-    })
-    .then(function (data) {
-      if (data.name.length > 8) {
-        document.querySelector(".city_name_value").style.paddingTop = "10px";
-      } else {
-        // document.querySelector(".city_name_value").style.paddingTop = "50px";
+  async function fetchData(url) {
+    try {
+      const response = await fetch(url);
+      try {
+        if (response.ok) {
+          const data = await response.json();
+
+          document.querySelector(".city_name_value").innerText = data.name;
+
+          document.getElementById("temp").innerHTML =
+            Math.round(data.main.temp - 273) + "&deg;";
+
+          let iconId = data.weather[0].icon;
+
+          document.getElementById(
+            "weather_icon"
+          ).src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
+
+          let weatherRaw = data.weather[0].description;
+
+          let weatherState =
+            weatherRaw.charAt(0).toUpperCase() + weatherRaw.slice(1);
+
+          document.getElementById("weather_state").innerText = weatherState;
+
+          document.querySelector(".parameter_weather").innerText =
+            data.weather[0].main;
+
+          document.querySelector(".parameter_humidity").innerText =
+            data.main.humidity + "%";
+
+          document.querySelector(".parameter_pressure").innerText =
+            data.main.pressure + " hPa";
+
+          document.querySelector(".parameter_wind").innerText =
+            data.wind.speed + " m/s";
+
+          Timezone = data.timezone;
+          ShiftTime = UTCtime + Timezone * 1000;
+          dateShift = new Date(ShiftTime);
+          h = addZero(dateShift.getHours());
+          m = addZero(dateShift.getMinutes());
+          s = dateShift.getSeconds();
+          a =
+            h +
+            ":" +
+            m +
+            " - " +
+            dateShift.toLocaleDateString("en-US", options);
+          document.querySelector(".time-date").innerHTML = a;
+        } else {
+          alert("Something went wrong, try again");
+        }
+      } catch (e) {
+        alert(e.message);
       }
-
-      document.querySelector(".city_name_value").innerText = data.name;
-
-      document.getElementById("temp").innerHTML =
-        Math.round(data.main.temp - 273) + "&deg;";
-
-      let iconId = data.weather[0].icon;
-
-      document.getElementById(
-        "weather_icon"
-      ).src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
-
-      let weatherRaw = data.weather[0].description;
-
-      let weatherState =
-        weatherRaw.charAt(0).toUpperCase() + weatherRaw.slice(1);
-
-      document.getElementById("weather_state").innerText = weatherState;
-
-      document.querySelector(".parameter_weather").innerText =
-        data.weather[0].main;
-
-      document.querySelector(".parameter_humidity").innerText =
-        data.main.humidity + "%";
-
-      document.querySelector(".parameter_pressure").innerText =
-        data.main.pressure + " hPa";
-
-      document.querySelector(".parameter_wind").innerText =
-        data.wind.speed + " m/s";
-
-      Timezone = data.timezone;
-      ShiftTime = UTCtime + Timezone * 1000;
-      dateShift = new Date(ShiftTime);
-      h = addZero(dateShift.getHours());
-      m = addZero(dateShift.getMinutes());
-      s = dateShift.getSeconds();
-      a = h + ":" + m + " - " + dateShift.toLocaleDateString("en-US", options);
-      document.querySelector(".time-date").innerHTML = a;
-      console.log(data);
-    })
-    .catch(() => {
-      alert("Something went wrong, try again");
-    });
+    } catch (e) {
+      alert("Network problems");
+    }
+  }
+  fetchData(url);
 };
